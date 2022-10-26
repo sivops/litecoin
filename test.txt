@@ -1,0 +1,23 @@
+Script kiddies: Source or come up with a text manipulation problem and solve it with at least two of awk, sed, tr and / or grep.
+
+Note1: used gsed instead of sed as I am using macOS
+Note2: `$` means command here
+Note3: sample.text is the text manipulation file
+Note4: test.txt is the step by step description file for the test assigned
+
+# creating a file with sample sentences
+$ echo "Hello world! this is a simple text file" > sample.text
+
+# view the file contents using awk
+$ awk '{print}' sample.text 
+Hello world! this is a simple text file
+
+# print the line if it finds the word "simple"
+$ awk '/simple/' sample.text
+Hello world! this is a simple text file
+
+##### using "gsed" to replace the word "simple" with "sample"
+$ gsed -i 's|simple|sample|g' sample.text 
+
+$ awk '{print}' sample.text
+Hello world! this is a sample text file
